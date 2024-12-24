@@ -6,9 +6,11 @@
 /*   By: aluque-v <aluque-v@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 21:05:24 by aluque-v          #+#    #+#             */
-/*   Updated: 2024/12/21 23:59:29 by aluque-v         ###   ########.fr       */
+/*   Updated: 2024/12/23 23:25:58 by asier            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {

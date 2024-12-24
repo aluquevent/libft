@@ -6,9 +6,11 @@
 /*   By: aluque-v <aluque-v@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 19:05:50 by aluque-v          #+#    #+#             */
-/*   Updated: 2024/11/11 19:08:49 by aluque-v         ###   ########.fr       */
+/*   Updated: 2024/12/23 23:26:15 by asier            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_tolower(int c)
 {

@@ -6,9 +6,11 @@
 /*   By: aluque-v <aluque-v@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 18:34:58 by aluque-v          #+#    #+#             */
-/*   Updated: 2024/11/11 18:37:44 by aluque-v         ###   ########.fr       */
+/*   Updated: 2024/12/23 23:24:33 by asier            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_isascii(int c)
 {

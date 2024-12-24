@@ -1,20 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aluque-v <aluque-v@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/11 19:09:07 by aluque-v          #+#    #+#             */
-/*   Updated: 2024/12/23 23:26:29 by asier            ###   ########.fr       */
+/*   Created: 2024/12/22 11:05:23 by aluque-v          #+#    #+#             */
+/*   Updated: 2024/12/22 20:38:06 by aluque-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_toupper(int c)
+void	ft_bzero(void *s, size_t n)
 {
-	if (c >= 'a' && c <= 'z')
-		return (c - 32);
-	return (c);
+	char	*tmp_ptr;
+
+	tmp_ptr = (char *) s;
+	while (n > 0)
+	{
+		*(tmp_ptr++) = 0;
+		n--;
+	}
 }

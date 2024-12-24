@@ -6,9 +6,11 @@
 /*   By: aluque-v <aluque-v@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 18:54:06 by aluque-v          #+#    #+#             */
-/*   Updated: 2024/11/11 19:01:06 by aluque-v         ###   ########.fr       */
+/*   Updated: 2024/12/23 23:25:44 by asier            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 size_t	ft_strlen(const char *str)
 {

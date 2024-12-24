@@ -6,9 +6,11 @@
 /*   By: aluque-v <aluque-v@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 18:15:18 by aluque-v          #+#    #+#             */
-/*   Updated: 2024/11/11 18:36:07 by aluque-v         ###   ########.fr       */
+/*   Updated: 2024/12/23 23:24:12 by asier            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_isalpha(int c)
 {
