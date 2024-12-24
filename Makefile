@@ -15,32 +15,33 @@ TEST_MAIN = $(shell pwd)/tests/main.c
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	@echo "Creando la biblioteca estática ${NAME}... 📚"
+	@echo "Creating static library ${NAME}... 📚"
 	@$(AR) $(NAME) $(OBJS)
-	@echo "Biblioteca ${NAME} creada con éxito. ✅"
+	@echo "Library ${NAME} created successfully. ✅"
 
 $(OBJDIR)%.o: $(SRCDIR)%.c
-	@echo "Compilando $<... 🛠️"
+	@echo "Compiling $<... 🛠️"
 	@mkdir -p $(OBJDIR)
 	@$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	@echo "Eliminando archivos objeto... 🧹"
+	@echo "Removing object files... 🧹"
 	@$(RM) -r $(OBJDIR)
-	@echo "Archivos objeto eliminados. ✅"
+	@echo "Object files removed. ✅"
 
 fclean: clean
-	@echo "Eliminando ${NAME} y el ejecutable de tests... 🗑️"
+	@echo "Removing ${NAME} and test executable... 🗑️"
 	@$(RM) $(NAME)
 	@$(RM) $(TEST_NAME)
-	@echo "Limpieza completa. ✅"
+	@echo "Cleanup complete. ✅"
 
 re: fclean all
+	@echo "Full recompilation complete. 🎉"
 
 test: $(NAME)
-	@echo "Compilando el ejecutable de tests... 🧪"
+	@echo "Compiling test executable... 🧪"
 	@$(CC) $(CFLAGS) $(NAME) $(TEST_MAIN) -o $(TEST_NAME)
-	@echo "Ejecutando los tests... 🚀"
+	@echo "Running tests... 🚀"
 	./$(TEST_NAME)
 .PHONY: all fclean clean re test
 	
