@@ -1,17 +1,31 @@
-NAME = libtf.a
+
+# Directories
+SRC_DIR = $(shell pwd)/srcs/
+OBJ_DIR = $(shell pwd)/objs/
+TEST_DIR = $(shell pwd)/tests/
+INCLUDES = $(shell pwd)/includes/
+
+# Files
+SRC_FILES = $(wildcard $(SRC_DIR)*.c)
+TEST_FILES = $(wildcard $(TEST_DIR)*.c)
+
+SRCS = $(SRC_FILES)
+OBJS = $(SRC_FILES:$(SRC_DIR)%.c=$(OBJ_DIR)%.o)
+TEST_SRCS = $(TEST_FILES)
+TEST_OBJS = $(TEST_FILES:$(TEST_DIR)%.c=$(OBJ_DIR)%.o)
+
+# Compiler and Flags
 CC = cc
-CFLAGS = -Wall -Werror -Wextra -I./include
+CFLAGS = -Wall -Werror -Wextra -I$(INCLUDES)
 AR = ar rcs
 RM = rm -f
 
-SRCDIR = $(shell pwd)/srcs/
-OBJDIR = $(shell pwd)/objs/
+# Targets
+NAME = libft.a
+TEST_LIB = libtests.a
+EXEC = test_libft
 
-SRCS = $(wildcard $(SRCDIR)*.c)
-OBJS = $(SRCS:$(SRCDIR)%.c=$(OBJDIR)%.o)
-
-TEST_NAME = test_libft
-TEST_MAIN = $(shell pwd)/tests/main.c
+# Rules
 all: $(NAME)
 
 $(NAME): $(OBJS)
@@ -19,29 +33,37 @@ $(NAME): $(OBJS)
 	@$(AR) $(NAME) $(OBJS)
 	@echo "Library ${NAME} created successfully. ✅"
 
-$(OBJDIR)%.o: $(SRCDIR)%.c
+$(OBJ_DIR):
+	@mkdir -p $(OBJ_DIR)
+
+$(OBJ_DIR)%.o: $(SRC_DIR)%.c | $(OBJ_DIR)
 	@echo "Compiling $<... 🛠️"
-	@mkdir -p $(OBJDIR)
 	@$(CC) $(CFLAGS) -c $< -o $@
 
+$(OBJ_DIR)%.o: $(TEST_DIR)%.c | $(OBJ_DIR)
+	@echo "Compiling $<... 🛠️"
+	@$(CC) $(CFLAGS) -c $< -o $@
+
+$(TEST_LIB): $(TEST_OBJS)
+	@echo "Creating test library $(TEST_LIB)... 🧪"
+	@$(AR) $(TEST_LIB) $(TEST_OBJS)
+
+test: $(NAME) $(TEST_LIB)
+	@echo "Compiling tests executable $(EXEC)... 🔍"
+	@$(CC) $(CFLAGS) ./tests/main.c -L. -lft -L. -ltests -o $(EXEC)
+	@./$(EXEC)
 clean:
 	@echo "Removing object files... 🧹"
-	@$(RM) -r $(OBJDIR)
+	@$(RM) -r $(OBJ_DIR)
 	@echo "Object files removed. ✅"
 
 fclean: clean
-	@echo "Removing ${NAME} and test executable... 🗑️"
-	@$(RM) $(NAME)
-	@$(RM) $(TEST_NAME)
+	@echo "Removing libraries and executable... 🗑️"
+	@$(RM) $(NAME) $(TEST_LIB) $(EXEC)
 	@echo "Cleanup complete. ✅"
 
 re: fclean all
 	@echo "Full recompilation complete. 🎉"
 
-test: $(NAME)
-	@echo "Compiling test executable... 🧪"
-	@$(CC) $(CFLAGS) $(NAME) $(TEST_MAIN) -o $(TEST_NAME)
-	@echo "Running tests... 🚀"
-	./$(TEST_NAME)
 .PHONY: all fclean clean re test
 	

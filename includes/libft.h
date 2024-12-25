@@ -6,7 +6,7 @@
 /*   By: asier <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/23 23:03:50 by asier             #+#    #+#             */
-/*   Updated: 2024/12/23 23:59:07 by asier            ###   ########.fr       */
+/*   Updated: 2024/12/25 22:40:48 by asier            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void	*ft_memset(void *b, int c, size_t n);
 void	*ft_memcpy(void *dst, const void *src, size_t n);
 void	*ft_memmove(void *dst, const void *src, size_t len);
 size_t	ft_strlen(const char *str);
-char	*ft_strlcpy(char *dst, const char *src, size_t dstsize);
+size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize);
 int	ft_strncmp(const char *s1, const char *s2, size_t n);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: aluque-v <aluque-v@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 21:12:40 by aluque-v          #+#    #+#             */
-/*   Updated: 2024/12/23 23:23:33 by asier            ###   ########.fr       */
+/*   Updated: 2024/12/24 17:27:03 by asier            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,5 +34,5 @@ int	ft_atoi(const char *str)
 		result = result * 10 + (str[i] - '0');
 		i++;
 	}
-	return (result);
+	return (result * sign);
 }
