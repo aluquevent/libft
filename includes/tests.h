@@ -15,9 +15,12 @@ void	test_ft_memcpy(void);
 void	test_ft_memmove(void);
 void	test_ft_memset(void);
 void	test_ft_strlcpy(void);
+void	test_ft_strlcat(void);
 void	test_ft_strlen(void);
 void	test_ft_strncmp(void);
 void	test_ft_tolower(void);
 void	test_ft_toupper(void);
+void	test_ft_strchr(void);
+void	test_ft_strnstr(void);
 void	run_tests(void);
 #endif

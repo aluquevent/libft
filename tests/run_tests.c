@@ -13,8 +13,11 @@ void	run_tests(void)
 	test_ft_toupper();
 	test_ft_tolower();
 	test_ft_strlcpy();
+	test_ft_strlcat();
 	test_ft_bzero();
 	test_ft_memcpy();
 	test_ft_memmove();
 	test_ft_memset();
+	test_ft_strchr();
+	test_ft_strnstr();
 }
