@@ -10,9 +10,9 @@ SRC_FILES = $(wildcard $(SRC_DIR)*.c)
 TEST_FILES = $(wildcard $(TEST_DIR)*.c)
 
 SRCS = $(SRC_FILES)
-OBJS = $(SRC_FILES:$(SRC_DIR)%.c=$(OBJ_DIR)%.o)
+OBJS = $(SRC_FILES:$(SRC_DIR)%.c=$(OBJ_DIR)srcs/%.o)
 TEST_SRCS = $(TEST_FILES)
-TEST_OBJS = $(TEST_FILES:$(TEST_DIR)%.c=$(OBJ_DIR)%.o)
+TEST_OBJS = $(TEST_FILES:$(TEST_DIR)%.c=$(OBJ_DIR)tests/%.o)
 
 # Compiler and Flags
 CC = cc
@@ -35,12 +35,14 @@ $(NAME): $(OBJS)
 
 $(OBJ_DIR):
 	@mkdir -p $(OBJ_DIR)
-
-$(OBJ_DIR)%.o: $(SRC_DIR)%.c | $(OBJ_DIR)
+	@mkdir -p $(OBJ_DIR)srcs/
+	@mkdir -p $(OBJ_DIR)tests/
+	
+$(OBJ_DIR)srcs/%.o: $(SRC_DIR)%.c | $(OBJ_DIR)
 	@echo "Compiling $<... 🛠️"
 	@$(CC) $(CFLAGS) -c $< -o $@
 
-$(OBJ_DIR)%.o: $(TEST_DIR)%.c | $(OBJ_DIR)
+$(OBJ_DIR)tests/%.o: $(TEST_DIR)%.c | $(OBJ_DIR)
 	@echo "Compiling $<... 🛠️"
 	@$(CC) $(CFLAGS) -c $< -o $@
 
@@ -50,7 +52,7 @@ $(TEST_LIB): $(TEST_OBJS)
 
 test: $(NAME) $(TEST_LIB)
 	@echo "Compiling tests executable $(EXEC)... 🔍"
-	@$(CC) $(CFLAGS) ./tests/main.c -L. -lft -L. -ltests -o $(EXEC)
+	@$(CC) $(CFLAGS) ./objs/tests/main.o -L. -ltests -L. -lft -o $(EXEC)
 	@./$(EXEC)
 clean:
 	@echo "Removing object files... 🧹"

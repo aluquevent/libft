@@ -6,7 +6,7 @@
 /*   By: asier <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/27 14:45:28 by asier             #+#    #+#             */
-/*   Updated: 2024/12/29 18:12:23 by asier            ###   ########.fr       */
+/*   Updated: 2025/01/07 12:54:48 by aluque-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,7 @@ char	*ft_strchr(const char *s, int c)
 	{
 		if (*ptr == (char)c)
 			return ((char *)ptr);
-		else
-			ptr++;
+		ptr++;
 	}
 	if (c == '\0')
 		return ((char *)ptr);
