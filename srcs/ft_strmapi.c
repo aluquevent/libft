@@ -1,38 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aluque-v <aluque-v@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/07 11:26:29 by aluque-v          #+#    #+#             */
-/*   Updated: 2025/01/10 13:03:08 by aluque-v         ###   ########.fr       */
+/*   Created: 2025/01/10 13:48:15 by aluque-v          #+#    #+#             */
+/*   Updated: 2025/01/10 19:07:41 by aluque-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strtrim(char const *s1, char const *set)
+char	*ft_strmapi(char const *s, char(*f)(unsigned int, char))
 {
-	char	*result;
-	size_t	start;
-	size_t	end;
-	size_t	len;
+	char		*result;
+	unsigned int	i;
 
-	if (!s1 || !set)
+	if (!s || !f)
 		return (NULL);
-	start = 0;
-	end = ft_strlen(s1) - 1;
-	while (s1[start] && ft_strchr(set, s1[start]))
-		start++;
-	if (s1[start] == '\0')
-		return (ft_strdup(""));
-	while (s1[end] && ft_strchr(set, s1[end]))
-		end--;
-	len = end - start + 1;
-	result = (char *)malloc(sizeof(char) * len + 1);
+	result = (char*)malloc(sizeof(char) * (ft_strlen(s) + 1));
 	if (!result)
 		return (NULL);
-	ft_strlcpy(result, &s1[start], len + 1);
+	i = 0;
+	while (i < ft_strlen(s))
+	{
+		result[i] = (*f)(i, s[i]);
+		i++;
+	}
+	result[i] = 0;
 	return (result);
 }
