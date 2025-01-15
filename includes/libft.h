@@ -6,7 +6,7 @@
 /*   By: asier <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/23 23:03:50 by asier             #+#    #+#             */
-/*   Updated: 2025/01/10 14:16:21 by aluque-v         ###   ########.fr       */
+/*   Updated: 2025/01/14 16:58:25 by asier            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,12 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <stddef.h>
+
+typedef struct	s_list
+{
+	void			*content;
+	struct s_list	*next;
+}					t_list;
 
 int		ft_atoi(const char *str);
 int		ft_isalpha(int c);
