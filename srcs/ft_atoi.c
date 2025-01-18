@@ -6,10 +6,9 @@
 /*   By: aluque-v <aluque-v@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 21:12:40 by aluque-v          #+#    #+#             */
-/*   Updated: 2024/12/24 17:27:03 by asier            ###   ########.fr       */
+/*   Updated: 2025/01/18 16:11:36 by aluque-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include "libft.h"
 
 int	ft_atoi(const char *str)

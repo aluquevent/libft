@@ -20,10 +20,11 @@ void	test_ft_strlen(void);
 void	test_ft_strncmp(void);
 void	test_ft_tolower(void);
 void	test_ft_toupper(void);
-void	test_ft_strchr(void);
 void	test_ft_strnstr(void);
 void	test_ft_strdup(void);
 void	test_ft_substr(void);
+void	test_ft_strchr(void);
+void	test_ft_strrchr(void);
 void	run_tests(void);
 
 #endif

@@ -18,6 +18,7 @@ void	run_tests(void)
 	test_ft_memcpy();
 	test_ft_memmove();
 	test_ft_memset();
-	test_ft_strchr();
 	test_ft_strnstr();
+	test_ft_strchr();
+	test_ft_strrchr();
 }

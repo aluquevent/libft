@@ -5,11 +5,10 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: aluque-v <aluque-v@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/10 13:04:07 by aluque-v          #+#    #+#             */
-/*   Updated: 2025/01/10 14:26:13 by aluque-v         ###   ########.fr       */
+/*   Created: 2025/01/18 16:15:30 by aluque-v          #+#    #+#             */
+/*   Updated: 2025/01/18 16:15:41 by aluque-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include "libft.h"
 
 size_t	ft_get_digits(unsigned int n)

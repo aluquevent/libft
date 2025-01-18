@@ -5,12 +5,13 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: aluque-v <aluque-v@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/07 13:02:22 by aluque-v          #+#    #+#             */
-/*   Updated: 2025/01/17 16:17:17 by aluque-v         ###   ########.fr       */
+/*   Created: 2025/01/18 16:19:59 by aluque-v          #+#    #+#             */
+/*   Updated: 2025/01/18 17:20:04 by aluque-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
 static size_t	ft_is_separator(char c, char ch)
 {
 	if (c == ch)
@@ -22,12 +23,10 @@ static size_t	ft_count_words(char const *s, char c)
 {
 	size_t	count;
 	size_t	is_word;
-	size_t	i;
 
 	if (!s)
 		return (0);
 	is_word = 1;
-	i = 0;
 	count = 0;
 	while (*s)
 	{
@@ -68,10 +67,12 @@ char	**ft_split(char const *s, char c)
 	size_t	i;
 	size_t	words;
 	size_t	sl;
-
+	
+	if (!s)
+		return (NULL);
 	words = ft_count_words(s, c);
 	matrix = (char **)malloc(sizeof(char *) * (words + 1));
-	if (!s || !matrix)
+	if (!matrix)
 		return (NULL);
 	i = 0;
 	while (i < words)

@@ -6,7 +6,7 @@
 /*   By: aluque-v <aluque-v@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/22 11:05:23 by aluque-v          #+#    #+#             */
-/*   Updated: 2024/12/22 20:38:06 by aluque-v         ###   ########.fr       */
+/*   Updated: 2025/01/18 16:12:22 by aluque-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	ft_bzero(void *s, size_t n)
 {
 	char	*tmp_ptr;
 
-	tmp_ptr = (char *) s;
+	tmp_ptr = (char *)s;
 	while (n > 0)
 	{
 		*(tmp_ptr++) = 0;
