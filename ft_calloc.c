@@ -10,7 +10,14 @@
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
-#include <string.h>
+
+/*
+*
+*		The calloc() function shall allocate unused space for an array of
+*		nmemb elements each of whose size in bytes is <size>.  The space
+*		shall be initialized to all bits 0.
+*
+*/
 
 void	*ft_calloc(size_t nmemb, size_t size)
 {

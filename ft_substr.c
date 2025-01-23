@@ -11,11 +11,17 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stddef.h>
+
+/*
+*
+*		Allocate (with malloc()) and returns a substring from the string 's'.
+*		The substring begins at index 'start' and is of maximun size 'len'.
+*
+*/
 
 char	*ft_substr(const char *s, unsigned int start, size_t len)
 {
-	char	*ret;
+	char	*result;
 
 	if (!s)
 		return (0);
@@ -23,9 +29,9 @@ char	*ft_substr(const char *s, unsigned int start, size_t len)
 		len = 0;
 	if (ft_strlen(s + start) < len)
 		len = ft_strlen(s + start);
-	ret = malloc(sizeof(char) * (len + 1));
-	if (!ret)
+	result = malloc(sizeof(char) * (len + 1));
+	if (!result)
 		return (0);
-	ft_strlcpy(ret, s + start, len + 1);
-	return (ret);
+	ft_strlcpy(result, s + start, len + 1);
+	return (result);
 }

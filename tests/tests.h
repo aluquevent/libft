@@ -25,6 +25,8 @@ void	test_ft_strdup(void);
 void	test_ft_substr(void);
 void	test_ft_strchr(void);
 void	test_ft_strrchr(void);
+void	test_ft_memchr(void);
+void	test_ft_memcmp(void);
 void	run_tests(void);
 
 #endif

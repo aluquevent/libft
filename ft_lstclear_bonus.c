@@ -11,6 +11,14 @@
 /* ************************************************************************** */
 #include "libft.h"
 
+/*
+*
+*		Deletes and frees the given element and every succesor of the
+*		element, using the funciton 'del' and free().
+*		Finally, the pointer to the list must be set to NULL.
+*
+*/
+
 void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
 	t_list	*tmp;
@@ -19,7 +27,7 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 	if (!lst || !del)
 		return ;
 	current = *lst;
-	while(current)
+	while (current)
 	{
 		tmp = current->next;
 		del(current->content);

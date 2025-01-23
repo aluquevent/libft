@@ -11,12 +11,19 @@
 /* ************************************************************************** */
 #include "libft.h"
 
+/*
+*
+*		The atoi() function converts the initial portion of the string
+*		pointed to by nptr to int.
+*
+*/
+
 int	ft_atoi(const char *str)
 {
 	int	i;
 	int	result;
 	int	sign;
-	
+
 	i = 0;
 	result = 0;
 	sign = 1;

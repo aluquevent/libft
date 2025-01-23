@@ -11,6 +11,12 @@
 /* ************************************************************************** */
 #include "libft.h"
 
+/*
+*
+*		Add the element 'newlst' at the end of the list.
+*
+*/
+
 void	ft_lstadd_back(t_list **lst, t_list *newlst)
 {
 	if (!*lst)

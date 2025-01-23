@@ -12,6 +12,14 @@
 
 #include "libft.h"
 
+/*
+*
+*		The strrchr() function shall locate the last occurrence of c
+*		(converted to a char) in the string pointed to by s.  The
+*		terminating NUL character is considered to be part of the string.
+*
+*/
+
 char	*ft_strrchr(const char *s, int c)
 {
 	const char	*ptr;

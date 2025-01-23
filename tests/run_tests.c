@@ -21,4 +21,6 @@ void	run_tests(void)
 	test_ft_strnstr();
 	test_ft_strchr();
 	test_ft_strrchr();
+	test_ft_memchr();
+	test_ft_memcmp();
 }

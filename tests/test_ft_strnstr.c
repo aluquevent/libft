@@ -4,7 +4,7 @@
 void test_ft_strnstr(void)
 {
     char *haystack1 = "Hello, World!";
-    char *needle1 = "World";
+    char *needle1 = ",";
     char *haystack2 = "abcdef";
     char *needle2 = "def";
     char *haystack3 = "abc";
@@ -23,10 +23,10 @@ void test_ft_strnstr(void)
     char *result;
 
     printf("--> Testing ft_strnstr...\n");
-
+    len1 = 0;
     // Test 1
-    result = ft_strnstr(haystack1, needle1, len1);
-    if (result != NULL && strcmp(result, "World!") == 0)
+    result = ft_strnstr(haystack1, needle1, 12);
+    if (result != NULL && strcmp(result, ", World!") == 0)
     {
         printf("	Test 1 ✅\n");
         printf("		Haystack: %s\n", haystack1);

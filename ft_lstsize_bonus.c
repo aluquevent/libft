@@ -12,6 +12,12 @@
 
 #include "libft.h"
 
+/*
+*
+*		Count the number of elements in a list.
+*
+*/
+
 int	ft_lstsize(t_list *lst)
 {
 	t_list	*current;

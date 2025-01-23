@@ -12,6 +12,13 @@
 
 #include "libft.h"
 
+/*
+*
+*		Allocates with malloc() and returns an array of string obtained
+*		by splitting 's' using the character 'c'.
+*
+*/
+
 static size_t	ft_count_words(char const *s, char c)
 {
 	size_t	count;
@@ -55,15 +62,15 @@ char	**ft_split(char const *s, char c)
 	size_t	i;
 	size_t	words;
 	size_t	sl;
-	
+
 	if (!s)
 		return (NULL);
 	words = ft_count_words(s, c);
 	matrix = (char **)malloc(sizeof(char *) * (words + 1));
 	if (!matrix)
 		return (NULL);
-	i = 0;
-	while (i < words)
+	i = -1;
+	while (++i < words)
 	{
 		while (*s == c)
 			s++;
@@ -73,7 +80,6 @@ char	**ft_split(char const *s, char c)
 			return (ft_free_matrix((const char *)matrix, words));
 		ft_strlcpy(matrix[i], s, sl + 1);
 		s = ft_strchr(s, (int)c);
-		i++;
 	}
 	matrix[i] = 0;
 	return (matrix);

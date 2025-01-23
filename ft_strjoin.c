@@ -12,15 +12,22 @@
 
 #include "libft.h"
 
+/*
+*
+*		Allocates with malloc() and returns a new string, which is
+*		the result of the concatenation of 's1' and 's2'.
+*
+*/
+
 char	*ft_strjoin(char const *s1, char const *s2)
 {
 	size_t	len;
 	char	*result;
-	
-	if(!s1 || !s2)
+
+	if (!s1 || !s2)
 		return (NULL);
 	len = ft_strlen(s1) + ft_strlen(s2);
-	result = (char*)malloc(sizeof(char) * (len + 1));
+	result = (char *)malloc(sizeof(char) * (len + 1));
 	if (!result)
 		return (NULL);
 	ft_strlcpy(result, s1, len + 1);

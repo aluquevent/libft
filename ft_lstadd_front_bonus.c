@@ -11,6 +11,12 @@
 /* ************************************************************************** */
 #include "libft.h"
 
+/*
+*
+*		Adds the element 'newlst' at the beginning of the list
+*
+*/
+
 void	ft_lstadd_front(t_list **lst, t_list *newlst)
 {
 	if (!lst || !newlst)
