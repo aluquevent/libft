@@ -15,6 +15,8 @@ size_t	ft_get_digits(unsigned int n)
 {
 	size_t	digits;
 
+	if (n == 0)
+		return (1);
 	digits = 0;
 	while (n != 0)
 	{

@@ -1,35 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aluque-v <aluque-v@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/18 16:22:29 by aluque-v          #+#    #+#             */
-/*   Updated: 2025/01/18 16:22:30 by aluque-v         ###   ########.fr       */
+/*   Created: 2025/01/18 16:18:33 by aluque-v          #+#    #+#             */
+/*   Updated: 2025/01/18 16:18:35 by aluque-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
-	char	*sub;
-	size_t	i;
+	unsigned char		*tmp_dst;
+	const unsigned char	*tmp_src;
+	size_t				i;	
 
-	if (!s)
-		return (NULL);
-	if (start >= ft_strlen(s))
-		return (ft_strdup(""));
-	sub = malloc(sizeof(char) * (len + 1));
-	if (!sub)
-		return (NULL);
+	if (!dst || !src)
+		return (dst);
+	tmp_dst = (unsigned char *) dst;
+	tmp_src = (const unsigned char *) src;
 	i = 0;
-	while (start < len && s[start + i] != '\0')
+	while (i < n)
 	{
-		sub[i] = s[start + i];
+		tmp_dst[i] = tmp_src[i];
 		i++;
 	}
-	sub[i] = '\0';
-	return (sub);
+	return (dst);
 }

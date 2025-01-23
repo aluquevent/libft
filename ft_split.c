@@ -12,33 +12,21 @@
 
 #include "libft.h"
 
-static size_t	ft_is_separator(char c, char ch)
-{
-	if (c == ch)
-		return (1);
-	return (0);
-}
-
 static size_t	ft_count_words(char const *s, char c)
 {
 	size_t	count;
-	size_t	is_word;
 
 	if (!s)
 		return (0);
-	is_word = 1;
 	count = 0;
 	while (*s)
 	{
-		if (ft_is_separator(c, *s))
-		{
-			if (is_word == 1)
-				count++;
-			is_word = 0;
-		}
-		else 
-			is_word = 1;
-		s++;
+		while (*s == c)
+			s++;
+		if (*s)
+			count++;
+		while (*s != c && *s)
+			s++;
 	}
 	return (count);
 }
