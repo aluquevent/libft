@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Libft is a custom C library developed as part of the 42 School curriculum. It consists of a set of functions that extend the standard C library, including functions for handling strings, memory management, linked lists, and more.
+ibft is a custom C library developed as part of the 42 School curriculum. It consists of a set of functions that extend the standard C library, including functions for handling strings, memory management, linked lists, and more.
 
 ## Table of Contents
 
@@ -53,7 +53,7 @@ ft_toupper, ft_tolower;
 ### Part 2: Additional Functions
 
 ```c
-ft_strdup, ft_substr, ft_strjoin, ft_strtrim, ft_split;
+ft_strdup, ft_substr, ft_strjoin, ft_strtrim, ft_split, ft_striteri;
 ft_itoa, ft_strmapi, ft_putchar_fd, ft_putstr_fd, ft_putendl_fd, ft_putnbr_fd;
 ```
 
